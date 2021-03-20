@@ -1,4 +1,6 @@
 # This is simple test for connecting firebase authentication.
+based on the page  
+https://react-firebase-js.com/docs/react-firebase-auth/getting-started#install
 
 ## Firebase packages are Installed
 ```
