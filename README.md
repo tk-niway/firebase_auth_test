@@ -1,8 +1,14 @@
 # This is simple test for connecting firebase authentication.
 
-## .env file is neccesary to work this component.
+## Firebase packages are Installed
+```
+yarn add firebase  # npm i firebase
+yarn add @react-firebase/auth # or npm i @react-firebase/auth
+```
 
 ## the information that is below has to be written to .env
+.env file is neccesary to work this component.  
+You have to create .env at root directory, if you didn't have .env
 ```
 process.env.REACT_APP_API_KEY=
 process.env.REACT_APP_AUTH_DOMAIN=
