@@ -1,6 +1,6 @@
 import React from "react";
-import firebase from "firebase/app";
-import "firebase/auth";
+import firebase from "firebase/compat/app";
+import "firebase/compat/auth";
 import {
   FirebaseAuthProvider,
   FirebaseAuthConsumer,
@@ -17,9 +17,12 @@ const firebase_config = {
   appId: process.env.REACT_APP_APP_ID,
 };
 
-const email_login = {
-  email: process.env.REACT_EMAIL,
-  password: process.env.REACT_PASSWORD,
+const email_login_info = {
+  email: process.env.REACT_APP_YOUR_EMAIL,
+  password: process.env.REACT_APP_YOUR_PASSWORD,
+  // or above comment out and then below fill up with your info
+  // email: your-email@example.com,
+  // password: your_password,
 };
 
 export default function TestAuth() {
@@ -35,7 +38,8 @@ export default function TestAuth() {
         >
           Sign In with Google
         </button>
-
+        <br />
+        <br />
         {/* anonymously */}
         <button
           data-testid="signin-anon"
@@ -55,8 +59,8 @@ export default function TestAuth() {
             const res = await firebase
               .auth()
               .createUserWithEmailAndPassword(
-                email_login.email,
-                email_login.password
+                email_login_info.email,
+                email_login_info.password
               );
             res.user.sendEmailVerification();
             console.log(res);
@@ -64,15 +68,16 @@ export default function TestAuth() {
         >
           Sign In with Mail
         </button>
-
+        <br />
+        <br />
         {/* E-Mail Sign in */}
         <button
           onClick={() => {
             firebase
               .auth()
               .signInWithEmailAndPassword(
-                email_login.email,
-                email_login.password
+                email_login_info.email,
+                email_login_info.password
               );
           }}
         >
