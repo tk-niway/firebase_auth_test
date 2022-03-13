@@ -25,7 +25,7 @@ const email_login_info = {
   // password: your_password,
 };
 
-export default function TestAuth() {
+export default function Auth() {
   return (
     <FirebaseAuthProvider {...firebase_config} firebase={firebase}>
       <div>
